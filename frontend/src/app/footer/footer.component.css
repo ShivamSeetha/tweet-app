@@ -1,0 +1,15 @@
+h5{
+    background-color: rgb(31, 50, 112);
+    color: blanchedalmond;
+    font-weight: 50;
+    font-size: 100%;
+    padding: 6px;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+body{
+    height: 10%;
+}

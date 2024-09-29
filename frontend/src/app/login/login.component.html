@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card rounded">
+                <form class="box" autocomplete="off" (ngSubmit)="onSubmit()">
+                    <h1>Login</h1>
+                    <p class="text-muted"> Please Enter Your Username and Password!</p>
+                    <input type="text" [(ngModel)]="username" name="username" placeholder="Username" required>
+                    <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+                    <button mat-raised-button
+                    color="primary" type="submit"
+                  style="background-color: #080f77; color: white">
+                  Login
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

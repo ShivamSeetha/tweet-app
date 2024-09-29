@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mt-3" style="width: 18rem">
+        <img class="card-img-top text-center" src="/assets/defaultUser.png" alt="Card image cap " style="width: 97%" />
+        <div class="card-body">
+          <h5 class="card-title">@{{ currentUser.username }}</h5>
+          <p class="card-text">
+            Welcome, {{ currentUser.firstName }} {{ currentUser.lastName }}.
+            How is your day today ?
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Contact Number: +91 {{ currentUser.contactNumber }}
+          </li>
+          <li class="list-group-item">Email Id: {{ currentUser.email }}</li>
+        </ul>
+
+        <div class="card-body">
+          <button mat-raised-button style="background-color: #31a3c5; color: white"
+          [routerLink]="['/reset-pass', currentUser.username]">Reset Password</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row row-col-4 g-4">
+        <div *ngFor="let user of userList">
+          <div class="card ml-5 col mt-3" style="width: 85%">
+            <img src="/assets/defaultUser.png"
+              [ngClass]="user.username == currentUser.username ?'card-img-top':'card-img-top grayscale'" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">
+                <button mat-raised-button  
+                [routerLink]="['/tweets', user.username]">View tweets</button>
+              </h5>
+              <div class="card-text">
+                <ul>
+                  <li>{{ user.firstName }}</li>
+                  <li>{{ user.lastName }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card rounded">
+        <form class="box" (ngSubmit)="register()" [formGroup]="form" #formDirective="ngForm">
+          <h1>Register</h1>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput placeholder="Username" />
+            <mat-error>Please enter Username of atleast 4 characters</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="Password" />
+            <mat-error>Please enter Password of atleast 4 characters</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input formControlName="confirmPassword" matInput type="password" pattern="{{ form.value.password }}"
+              placeholder="Password" />
+            <mat-error>Passwords should match</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" matInput placeholder="First Name" />
+            <mat-error>Please enter valid First Name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" matInput placeholder="Last Name" />
+            <mat-error>Please enter valid Last Name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="email" placeholder="Email" />
+            <mat-error>Please enter valid Email</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contact Number</mat-label>
+            <input formControlName="contactNumber" matInput type="number" placeholder="Contact Number" />
+            <mat-error>Please enter valid Contact Number</mat-error>
+          </mat-form-field>
+
+          <mat-card-actions>
+            <div class="container text-center">
+              <div style="position:absolute; left: 6%;">
+                <button routerLink="/login" mat-raised-button color="primary" type="button">
+                  Back to Login
+                </button>
+              </div>
+              <div style="position:absolute; right: 6%;"><button mat-raised-button [disabled]="!form.valid"
+                  color="primary" type="submit" style="background-color: #42b72a; color: white">
+                  Register
+                </button>
+              </div>
+            </div>
+          </mat-card-actions>
+        </form>
+      </div>
+    </div>
+  </div>

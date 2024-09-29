@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card rounded">
+        <form class="box" autocomplete="off" (ngSubmit)="onSubmit()" [formGroup]="resetPasswordForm">
+          <h1>Reset Password</h1>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="Password" />
+            <mat-error>Please enter Password</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-card-actions>
+            <div class="container text-center">
+              <div>
+                <button mat-raised-button color="primary" type="submit" style="background-color: #42b72a; color: white">
+                  Done
+                </button>
+              </div>
+            </div>
+          </mat-card-actions>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
